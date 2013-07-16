@@ -1,0 +1,82 @@
+AuthMe:
+/register newPassword
+/login password
+/changepassword oldPassword newPassword
+/logout
+/unregister password
+/netstats stats                 - Shows list of stat names
+/netstats get:stat
+
+McMMO:
+/mcability                      - Toggles whether or not you can activate abilities with rightclick.
+/mcmmo	                        - Displays general mcMMO help text.
+/mcc	                        - Displays the list of mcMMO commands.
+/stats	                        - Displays the current skill levels of the player, including the current EXP and the total needed to level up.
+/[skillname]	                - Displays information on a specific skill.
+                
+McMMO Party:
+/party	                        - View information on your current party
+/party [party name]	            - Creates or Joins a named party.
+/party q	                    - Leaves the current party.
+/p	                            - Toggles party chat on/off. - Please add /partyjoin or something too.
+/invite [player name]           - Invites the named player to the current party.
+/accept	                        - Accepts a received party invitation.
+/ptp [party member name]        - Teleports the player to the designated party member.
+/party lock	                    - lock the party you are in
+/party password (password)	    - set a password to your party (only work if party is locked)
+
+Essentials:
+/balance, bal, money	        - Gives the current balance of a player.	
+/balancetop, baltop [page]      - Displays the top account balances.
+/pay <player> <amount>          - Pays a specified player from your balance.
+/sell <itemname|id> [amount]    - Sells an item with amount specified.
+/sell <hand|invent|blocks>      - Sells ALL of an item specified.
+/worth, price [item [amount]]	- Displays how much an item is worth
+/afk		                    - Sets your status as AFK.
+/compass, direction	            - Displays your current bearing in the world.
+/depth		                    - Displays your current block depth in relation to sea-level.
+/getpos, coords, position	    - Displays your current coordinate location in the world.
+/help [searchterm] [2;3;etc..]  - This displays the help commands for essentials.
+/helpop <message>	            - Requests help from online staff.
+/ignore	<player>            	- Ignore a player
+/info, ifo, news, eabout	    - This allows you to see information about the server.
+/itemdb	[search term]	        - Searches for an item.
+/list, who, playerlist	        - Lists the players online and how many slots are left.
+/mail                           - Allows you to send & receive mail.
+/me	action, describe	        - Allows you to emote.
+/motd		                    - Displays the motd (Message of the Day).
+/msg, tell, m, t, whisper	    - This allows you to private message another player.
+/near, nearby [radius]	        - Lists the players who are nearby
+/near <playername> [radius]
+/nick <nick|off>	            - Change your display name.
+/r, reply <message>             - Quickly reply to the last player to message you.
+/realname <player>		        - Allows you to see a player's real username
+/rules		                    - Displays the rules.
+/seen <player>		            - Check when a player was last online.
+/suicide		                - Commit suicide.
+/whois <nickname|playername>    - Displays player information.
+/spawn		                    - Teleports you to spawn.
+/back, return	                - Returns you to your last position from a prior teleport.
+/delhome,remhome,rmhome	        - Removes a home
+/delwarp, remwarp, rmwarp	    - Removes a warp location by warp name.
+/home, homes [name]             - Teleports you home.
+/sethome [name]	                - Sets your home location.
+/setwarp, createwarp	        - Defines a new warp location.
+/tpa, call <player to tp TO>    - Asks the player if you can teleport to them.
+/tpaall	[player]	            - Requests all players online to teleport to you.
+/tpaccept, tpyes	            - Accept a /tpa request.
+/tpahere <player to tp to YOU>  - Asks the specified player to accept transport to your location.
+/tpdeny, tpno	                - Deny a /tpa request.
+/tptoggle		                - Toggles players ability to teleport to you.
+
+LWC:
+/cprivate                       - creates a private protection.
+/cpassword <password>           - The alias of /lwc create password , it creates a passworded protection.
+/cpublic                        - The alias of /lwc create public, it creates a public protection
+/cremove                        - Allows you to remove a protection you own
+/cunlock <password>             - Allows you to attempt to gain access to a passworded protection.
+
+BIT:
+/sort, si                       - Sorts an inventory or chest (point at chest to sort chest)
+/bookshelf, bs []               - *BugFix Needed
+/backpack, bp [buy|upgrade]     - Buy/Upgrade a backpack. (OPEN BACKPACK WITH 'B' or /backpack)

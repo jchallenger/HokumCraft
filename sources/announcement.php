@@ -1,0 +1,1 @@
+<marquee><?php echo $announcement; ?></marquee>
