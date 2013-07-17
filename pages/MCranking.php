@@ -64,7 +64,6 @@ $job = array(
 <html>
 <head>
 
-<?php require (".\config\config.php"); ?>
 <body><center><span class='title2'><h2><?php echo $servername; ?> Ranking</h2></span>
 
 <br><font size="+2"; color="#3b2a05">Top Miners</font><br>

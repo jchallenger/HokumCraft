@@ -15,6 +15,11 @@ if (!isset($_POST['cpuser']))
 //If not isset -> set with dumy value 
 $_POST['cpuser'] = "undefine"; 
 }
+if (!isset($_POST['cppass'])) 
+{
+//If not isset -> set with dumy value 
+$_POST['cppass'] = NULL; 
+}
 if(!isset($_SESSION['id'])) {
 	if(!$_POST['cpuser'] || !$_POST['cppass']){
 	
@@ -32,12 +37,12 @@ if(!isset($_SESSION['id'])) {
 	
 		$xcpu = mysql_real_escape_string($_POST['cpuser']);
 		$xcpp = mysql_real_escape_string($_POST['cppass']);
-		$xcps = mysql_query("SELECT * FROM `accounts` WHERE `name`='".sql_sanitize($xcpu)."'") or die(mysql_error());
+		$xcps = mysql_query("SELECT * FROM `". $userTable ."` WHERE `username`='".sql_sanitize($xcpu)."'") or die(mysql_error());
 		$xcpi = mysql_fetch_array($xcps);
 		if($xcpi['password'] == hash('sha512',$xcpp.$xcpi['salt']) || sha1($xcpp) == $xcpi['password']) {
-			$sanitizename = sql_sanitize($xcpi['name']);
+			$sanitizename = sql_sanitize($xcpi['username']);
 			$sanitizepass = sql_sanitize($xcpi['password']);
-			$selectQ = mysql_query("SELECT * FROM `accounts` WHERE `name`='".$sanitizename."' AND `password`='".$sanitizepass."'") or die(mysql_error());
+			$selectQ = mysql_query("SELECT * FROM `". $userTable ."` WHERE `username`='".$sanitizename."' AND `password`='".$sanitizepass."'") or die(mysql_error());
 			$selectF = mysql_fetch_array($selectQ);
 			$_SESSION['id'] = $selectF['id'];
 			$_SESSION['name'] = $selectF['name'];

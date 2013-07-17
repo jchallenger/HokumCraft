@@ -18,7 +18,7 @@ $goal = 120;
 // Demo mode is set - set it to false to enable donations.
 // When enabled PayPal is bypassed.
 
-$demoMode = false;
+$demoMode = true;
 
 if($demoMode)
 {

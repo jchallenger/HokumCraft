@@ -2,10 +2,10 @@
 
 /* Database config */
 
-$db_host		= '99.245.162.36';
-$db_user		= 'root';
-$db_pass		= 'roflmfao';
-$db_database		= 'odinms';
+$db_host		= 'localhost';
+$db_user		= 'minecraft';
+$db_pass		= 'tricker9132';
+$db_database	= 'minecraft_hokumcraft';
 
 /* End config */
 

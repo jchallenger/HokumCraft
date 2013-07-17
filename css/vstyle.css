@@ -15,6 +15,24 @@ body {
 	font-weight: normal;
 	color: #F2F2F2;
 }
+h1{
+
+}
+h2{
+
+}
+h3 {
+    font-family: Verdana, sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    font-variant: small-caps;
+    border-bottom: 1px solid;
+    color: #ACACAC;
+    margin: 0;
+}
+h4 {
+
+}
 
 
 #header {
@@ -145,7 +163,15 @@ width: 17%;
 height:  100%;
 float: left;
 }
-
+#sidebar img {
+    margin: 0;
+}
+#sidebar h4 {
+    font-size: 30px;
+    font-variant: small-caps;
+    margin: 10px 0;
+    font-weight: normal;
+}
 #sidebarbg {
 background: transparent url(../images/sidebar_bg.png) no-repeat;
 position: relative;

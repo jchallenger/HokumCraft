@@ -1,7 +1,7 @@
 <?php
 if(isset($_GET['id'])){
 	$id = mysql_real_escape_string($_GET['id']);
-	$gn = mysql_query("SELECT * FROM `website_news` WHERE `id`='".$id."'") or die(mysql_error());
+	$gn = mysql_query("SELECT * FROM `web_news` WHERE `id`='".$id."'") or die(mysql_error());
 	$n = mysql_fetch_array($gn);
 	echo "<center>";
 	echo "<div id='naetext'>
@@ -14,10 +14,10 @@ if(isset($_GET['id'])){
 				Views: <b>".$n['views']."</b><br />
 				<a href=\"?page=index\">Return Home</a></div>";
 	echo "</center>";
-	$av = mysql_query("UPDATE `website_news` SET `views` = views + 1 WHERE `id`='".$id."'") or die(mysql_error());
+	$av = mysql_query("UPDATE `web_news` SET `views` = views + 1 WHERE `id`='".$id."'") or die(mysql_error());
 
 }else{
-	$gn = mysql_query("SELECT * FROM `website_news` ORDER BY `id` DESC") or die(mysql_error());
+	$gn = mysql_query("SELECT * FROM `web_news` ORDER BY `id` DESC") or die(mysql_error());
 
 	$rows = mysql_num_rows($gn);
 

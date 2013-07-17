@@ -2,7 +2,7 @@
 if(@$_GET['id']){
 	$id = mysql_real_escape_string($_GET['id']);
 	$page = mysql_real_escape_string($_GET['page']);
-	$ge = mysql_query("SELECT * FROM `website_news` WHERE `id`='".$id."'") or die(mysql_error());
+	$ge = mysql_query("SELECT * FROM `web_news` WHERE `id`='".$id."'") or die(mysql_error());
 	$e = mysql_fetch_array($ge);
 	echo "<center>";
 	
@@ -27,9 +27,9 @@ if(@$_GET['id']){
 				<a href=\"?page=index\">Return Home</a></div>";
 				
 		echo "</center>";
-	$av = mysql_query("UPDATE `website_events` SET `views` = views + 1 WHERE `id`='".$id."'") or die(mysql_error());
+	$av = mysql_query("UPDATE `web_events` SET `views` = views + 1 WHERE `id`='".$id."'") or die(mysql_error());
 }else{
-	$ge = mysql_query("SELECT * FROM `website_events` ORDER BY `id` DESC") or die(mysql_error());
+	$ge = mysql_query("SELECT * FROM `web_events` ORDER BY `id` DESC") or die(mysql_error());
 
 	$rows = mysql_num_rows($ge);
 

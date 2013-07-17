@@ -4,8 +4,6 @@ AuthMe:
 /changepassword oldPassword newPassword
 /logout
 /unregister password
-/netstats stats                 - Shows list of stat names
-/netstats get:stat
 
 McMMO:
 /mcability                      - Toggles whether or not you can activate abilities with rightclick.
@@ -75,8 +73,3 @@ LWC:
 /cpublic                        - The alias of /lwc create public, it creates a public protection
 /cremove                        - Allows you to remove a protection you own
 /cunlock <password>             - Allows you to attempt to gain access to a passworded protection.
-
-BIT:
-/sort, si                       - Sorts an inventory or chest (point at chest to sort chest)
-/bookshelf, bs []               - *BugFix Needed
-/backpack, bp [buy|upgrade]     - Buy/Upgrade a backpack. (OPEN BACKPACK WITH 'B' or /backpack)

@@ -4,17 +4,13 @@
 
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="./css/vstyle.css" />
-<title><?php echo $title; ?></title>
+<?php    include('includes/MCheader.php');    ?>
 </head>
 
 <body>
- <div id="sitebg"> </div>
+<div id="sitebg"> </div>
 <!-- MAIN WRAPPER -->
 <div id="wrapper">
-    <?php
-    include('includes/MCheader.php');
-    ?>
 <!-- CONTENT [WRAP] -->
 <div id="content">
     <!-- SIDEBAR -->
@@ -25,7 +21,7 @@
     <div id="topbarbg">
     <div id="topbar">
         <marquee behavior="scroll" direction="left" scrollamount="5" scrolldelay="80">
-        <?php echo $MCServer->motd; ?>
+        <?php echo $MCServer->GetInfo()['HostName']; ?>
         </marquee>
     </div>
     </div>
@@ -43,7 +39,7 @@
                 include("pages/home.php");
                 break;
             case "ThankYou":
-                include("/pages/DonationCenter/thankyou.php");
+                include("pages/DonationCenter/thankyou.php");
                 break;
             case "MineCraft":
                 include("pages/MChome.php");
