@@ -18,6 +18,7 @@ $current_page   = PageName();
 <center>
 <li><a class="nav_link<?php $current_page == 'index.php'      ? '_active' : NULL ?>" href="index.php"       >Home</a></li>
 <li><a class="nav_link<?php $current_page == '?page=register' ? '_active' : NULL ?>" href="?page=register"  >Register</a></li>
+<li><a class="nav_link<?php $current_page == '?page=dynmap'  ? '_active' : NULL ?>" href="?page=dynmap"   	>Map</a></li>
 <li><a class="nav_link<?php $current_page == '?page=download' ? '_active' : NULL ?>" href="?page=download"  >Download</a></li>
 <li><a class="nav_link<?php $current_page == '?page=ranking'  ? '_active' : NULL ?>" href="?page=ranking"   >Ranking</a></li>
 <li><a class="nav_link<?php $current_page == '?page=donate'   ? '_active' : NULL ?>" href="?page=donate"    >Donate</a></li>

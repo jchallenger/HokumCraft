@@ -4,7 +4,7 @@
 
 <html>
 <head>
-<?php    include('includes/MCheader.php');    ?>
+<?php    include('includes/header.php');    ?>
 </head>
 
 <body>
@@ -33,31 +33,28 @@
 
         switch($getpage){
             case NULL:
-                include("pages/MChome.php");
-                break;
-            case "HokumMS":
                 include("pages/home.php");
                 break;
             case "ThankYou":
                 include("pages/DonationCenter/thankyou.php");
                 break;
-            case "MineCraft":
-                include("pages/MChome.php");
-                break;
             case "commands":
-                include("pages/MCcommands.php");
+                include("pages/commands.php");
                 break;
             case "register":
-                include("pages/MCregister.php");
+                include("pages/register.php");
                 break;
             case "download":
-                include("pages/MCdownload.php");
+                include("pages/download.php");
+                break;
+            case "dynmap":
+                include("pages/dynmap.php");
                 break;
             case "community":
                 include("pages/community.php");
                 break;
             case "ranking":
-                include("pages/MCranking.php");
+                include("pages/ranking.php");
                 break;
             case "donate":
                 include("pages/DonationCenter/donate.php");
@@ -96,7 +93,7 @@
 
 </div>
 <?php
-include('includes/MCfooter.php');
+include('includes/footer.php');
 ?>
 
 </div>

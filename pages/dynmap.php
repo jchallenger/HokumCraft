@@ -1,0 +1,1 @@
+<iframe src="http://192.168.2.105:8123/" seamless style="width:100%; height: 450px; ">DynMap</iframe>

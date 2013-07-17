@@ -1,31 +1,18 @@
+
 <?php
-if(basename($_SERVER["PHP_SELF"]) == "header.php"){
+if(basename($_SERVER["PHP_SELF"]) == "MCheader.php"){
 	die("Error 403 - Forbidden");
 } 
 
 include('./config/config.php');
 ?>
-<html>
-<head>
+<!-- START OF MCHeader.php -->
+
+<!-- HEADER --->
+
 <link rel="stylesheet" type="text/css" href="./css/vstyle.css" />
 <title><?php echo $title; ?></title>
-</head>
-<body>
-<!-- MAIN WRAPPER -->
-<div id="wrapper">
-<!-- HEADER --->
-<div id="header"><center><img src="./images/logo.png"/></center></div>
-<!-- CONTENT [WRAP] -->
-<div id="content">
-<!-- ANNOUNCEMENT -->
-<div id="topbarbg"><div id="topbar"><marquee behavior="scroll" direction="left" scrollamount="5" scrolldelay="80"><?php echo $announcement; ?></marquee></div></div>
-<br/>
-<!--Sidebar-->
-<div id="sidebarbg">
-<div id="sidebar">
-<?php include("./sources/leftbar.php"); ?></div></div>
-<?php
-include('./sources/navigation.php');
-?>
-</body>
-</html>
+<div id="header"><center><img src="./images/MClogo.png"/></center></div>
+<!-- NAVIGATION --->
+<?php include('./sources/navigation.php'); ?>    
+<!-- END OF MCHeader.php -->

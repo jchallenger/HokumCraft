@@ -15,9 +15,9 @@ $accounts 		= mysql_num_rows($countaccs);
 ?>
 <table class="sidebarlist" cellspacing="0">
 
-<tr><td align=left>&nbsp;Version:</td><td>	        <font color="#208925">  <?php echo $MCServer->GetInfo()['Version']; ?></font></td></tr>
-<tr><td align=left>&nbsp;Players Online:</td><td>	<font color="#208925">  <?php echo $MCServer->GetInfo()['Players']; ?>/<?php echo $MCServer->GetInfo()['MaxPlayers']; ?></font></td></tr>
-<tr><td align=left>&nbsp;Total Players:</td><td> 	<font color="#208925">  <?php echo $accounts; ?></font></td></tr>
+<tr><td align=left>&nbsp;Version:</td>			<td align=right><font color="#208925">  <?php echo $MCServer->GetInfo()['Version']; ?></font></td></tr>
+<tr><td align=left>&nbsp;Players Online:</td>	<td align=right><font color="#208925">  <?php echo $MCServer->GetInfo()['Players']; ?>/<?php echo $MCServer->GetInfo()['MaxPlayers']; ?></font></td></tr>
+<tr><td align=left>&nbsp;Total Players:</td>	<td align=right><font color="#208925">  <?php echo $accounts; ?></font></td></tr>
 
 </table>
 
