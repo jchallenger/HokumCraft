@@ -21,19 +21,6 @@ h1{
 h2{
 
 }
-h3 {
-    font-family: Verdana, sans-serif;
-    font-size: 22px;
-    font-weight: normal;
-    font-variant: small-caps;
-    border-bottom: 1px solid;
-    color: #ACACAC;
-    margin: 0;
-}
-h4 {
-
-}
-
 
 #header {
 margin-top: 35px;
@@ -162,6 +149,16 @@ float: left;
 #sidebar img {
     margin: 0;
 }
+#sidebar h3 {
+    font-family: Verdana, sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    font-variant: small-caps;
+    border-bottom: 1px solid;
+    color: #ACACAC;
+    margin: 0;
+}
+
 #sidebar h4 {
     font-size: 30px;
     font-variant: small-caps;

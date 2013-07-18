@@ -22,7 +22,7 @@
 	$sbconf['app_version'] = "Open Beta 1.2 WIP";
     $sbconf['app'] = "2";
     $sbconf['theme'] = "Spacebukkit";
-    $sbconf['token'] = "%*TOKEN*%";
+    $sbconf['token'] = "f9ba51def3eae6beceebf7b1b38630cf";
 
     $languages = array();
 
