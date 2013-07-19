@@ -43,7 +43,7 @@ if(@$_GET['id']){
 	$maxlength = 30;
 		echo "<img src='./images/news/".$e['type'].".gif'> [".$e['date']."] <a href=\"?page=events&id=".$e['id']."\">";
 		if(strlen($title) > $maxlength){
-			echo stripslashes(shortTitle($title));
+			echo stripslashes(substr($title, 30));
 		}else{
 			echo stripslashes($title);
 		}

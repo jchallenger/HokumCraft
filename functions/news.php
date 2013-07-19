@@ -26,14 +26,14 @@ if(isset($_GET['id'])){
 	}
 	while($n = mysql_fetch_array($gn)){
 	$title = $n['title'];
-	$maxlength = 30;
+	$maxlength = 40;
 	echo "<div id='maincontent'><img src='./images/news/".$n['type'].".gif'>";
 
 	echo " [".$n['date']."]";
 
 	echo " <a href=\"?page=news&id=".$n['id']."\">";
 		if(strlen($title) > $maxlength){
-			echo stripslashes(shortTitle($title));
+			echo stripslashes(substr($title, 0, 35));
             
 		}else{
         //CHANGE COLOR HERE FOR NEWS

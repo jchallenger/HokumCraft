@@ -24,7 +24,7 @@ echo "<center><p class='ucpHeader'>Add A News Article</p>";
 							
 							<b>Content:</b> (HTML is allowed)<br>
 						
-							<textarea name=\"content\" style=\"height:70px;width:60%;\"></textarea><br><br>				
+							<textarea name=\"content\" style=\"height:120px;width:80%;\"></textarea><br><br>				
 							<input type=\"submit\" name=\"add\" value=\"Add News Article\" />
 							</form>";
 				}else{
@@ -40,7 +40,7 @@ echo "<center><p class='ucpHeader'>Add A News Article</p>";
 					}elseif($content == ""){
 						echo "You must enter some content.";
 					}else{
-						$i = mysql_query("INSERT INTO `website_news` (`title`,`author`,`type`,`date`,`content`) VALUES ('".$title."','".$author."','".$cat."','".$date."','".$content."')") or die(mysql_error());
+						$i = mysql_query("INSERT INTO `web_news` (`title`,`author`,`type`,`date`,`content`) VALUES ('".$title."','".$author."','".$cat."','".$date."','".$content."')") or die(mysql_error());
 						echo "Your news article has been posted.";
 					}
 				}

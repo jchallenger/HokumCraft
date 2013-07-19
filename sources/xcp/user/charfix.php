@@ -1,45 +1,82 @@
-<center>
-<p class="ucpHeader">Already Logged In</p>
-
 <?php
-if(isset($_SESSION['id'])) {	
-	if(!isset($_POST['loggedin'])){
-		echo "<form method=\"POST\"><center><input type=\"submit\" name=\"loggedin\" value=\"Fix\"></center></form>";
-	} else {
-		$name = $_SESSION['name'];
-		$g = mysql_query("SELECT * FROM `accounts` WHERE `name`='".$name."'") or die(mysql_error());
-		$u = mysql_fetch_array($g);
-		if($u['loggedin']=="0"){
-			echo "<br/><br/>You are already logged out!<br>You will be redirected in 2 seconds <meta http-equiv='refresh' content='2;url=\"?page=charfix\"'><br/><br/>";
-		}else{
-			$s = mysql_query("UPDATE `accounts` SET `loggedin`='0' WHERE `name`='".$name."'") or die(mysql_error());
-			echo "<br/>Your account has been fixed.<br>You will be redirected in 2 seconds <meta http-equiv='refresh' content='2;url=\"?page=charfix\"'><br/><br/>";
-		}
-	}
-} else {
-	echo "You are not logged in.";
+/** 
+ * Convert number of seconds into hours, minutes and seconds 
+ * and return an array containing those values 
+ * 
+ * @param integer $inputSeconds Number of seconds to parse 
+ * @return array 
+ */ 
+
+function secondsToTime($inputSeconds) {
+
+    $secondsInAMinute = 60;
+    $secondsInAnHour  = 60 * $secondsInAMinute;
+    $secondsInADay    = 24 * $secondsInAnHour;
+
+    // extract days
+    $days = floor($inputSeconds / $secondsInADay);
+
+    // extract hours
+    $hourSeconds = $inputSeconds % $secondsInADay;
+    $hours = floor($hourSeconds / $secondsInAnHour);
+
+    // extract minutes
+    $minuteSeconds = $hourSeconds % $secondsInAnHour;
+    $minutes = floor($minuteSeconds / $secondsInAMinute);
+
+    // extract the remaining seconds
+    $remainingSeconds = $minuteSeconds % $secondsInAMinute;
+    $seconds = ceil($remainingSeconds);
+
+    // return the final array
+    $obj = array(
+        'd' => (int) $days,
+        'h' => (int) $hours,
+        'm' => (int) $minutes,
+        's' => (int) $seconds,
+    );
+    return $obj;
 }
 ?>
-<br/>
-<p class="ucpHeader">Unstuck</p>
+
+<center>
+
 
 <?php
 if(isset($_SESSION['id'])) {
-	if(!isset($_POST['unstuck'])) {
-		echo "<form method=\"POST\">Character:<br/><select name=\"char\">";
-		$s = mysql_query("SELECT * FROM `characters` WHERE `accountid`='".$_SESSION['id']."' ORDER BY `id` ASC") or die(mysql_error());
-		while($c = mysql_fetch_array($s)) {
-			echo "<option value=\"".$c['id']."\">".$c['name']."</option>";
-		}
-		echo "</select><br /><br/><input type=\"submit\" name=\"unstuck\" value=\"Unstuck\"></form>";		
-	} else {
-		$char = mysql_real_escape_string($_POST['char']);
-		$map = mysql_real_escape_string(100000000);
-		$m = mysql_query("UPDATE `characters` SET `map`='".$map."' WHERE `id`='".$char."'") or die(mysql_error());
-		echo "Your character is now located in Henesys.<br/>You will be redirected in 2 seconds <meta http-equiv='refresh' content='2;url=\"?page=charfix\"'>";
+	echo "<p class='ucpHeader'>Your Stats</p>";
+		$name = $_SESSION['name'];
+		$g = mysql_query("SELECT * FROM `Stats_Player` WHERE `player`='".$name."'") or die(mysql_error());
+		$u = mysql_fetch_array($g);
+		
+		echo "
+		<table>
+		<tr><td class=list align=left>Time Played:</td>		<td class=list align=right> ".secondsToTime($u['playtime'])['d']." days, ".secondsToTime($u['playtime'])['h']." hours, ".secondsToTime($u['playtime'])['m']."mins and ".secondsToTime($u['playtime'])['s']." seconds.<br></td></tr>
+		<tr><td class=list align=left>Exp Gained:</td>		<td class=list align=right> ".$u['xpgained']."<br></td></tr>
+		<tr><td class=list align=left>Damage Taken:</td>	<td class=list align=right> ".$u['damagetaken']."<br></td></tr>
+		</table>
+		";
+	
+	echo "<p class='ucpHeader'>Your Skills</p>";
+		$usr 	= mysql_query("SELECT * FROM `mcmmo_users` WHERE `user`='".$name."'") or die(mysql_error());
+		$usrF 	= mysql_fetch_array($usr);
+		
+		$q 		= mysql_query("SELECT * FROM `mcmmo_skills` WHERE `user_id`='".$usrF['id']."'") or die(mysql_error());
+		$mcmmo 	= mysql_fetch_array($q);
+		
+		echo "
+		<table>
+		<tr><td class=list align=left>Mining:</td>			<td class=list align=right> ".$mcmmo['mining']."<br></td></tr>
+		<tr><td class=list align=left>Wood Cutting:</td>	<td class=list align=right> ".$mcmmo['woodcutting']."<br></td></tr>
+		<tr><td class=list align=left>Excavation:</td>		<td class=list align=right> ".$mcmmo['excavation']."<br></td></tr>
+		<tr><td class=list align=left>Swords:</td>			<td class=list align=right> ".$mcmmo['swords']."<br></td></tr>
+		<tr><td class=list align=left>Archery:</td>			<td class=list align=right> ".$mcmmo['archery']."<br></td></tr>
+		<tr><td class=list align=left>Axes:</td>			<td class=list align=right> ".$mcmmo['axes']."<br></td></tr>
+		<tr><td class=list align=left>Unarmed:</td>			<td class=list align=right> ".$mcmmo['unarmed']."<br></td></tr>
+		<tr><td class=list align=left>Herbalism:</td>		<td class=list align=right> ".$mcmmo['herbalism']."<br></td></tr>
+		<tr><td class=list align=left>Acrobatics:</td>		<td class=list align=right> ".$mcmmo['acrobatics']."<br></td></tr>
+		</table>
+		";
 	}
-} else {
-	echo "You are not logged in.";
-}
 ?>
 </center>

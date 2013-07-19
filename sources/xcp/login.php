@@ -45,7 +45,7 @@ if(!isset($_SESSION['id'])) {
 			$selectQ = mysql_query("SELECT * FROM `". $userTable ."` WHERE `username`='".$sanitizename."' AND `password`='".$sanitizepass."'") or die(mysql_error());
 			$selectF = mysql_fetch_array($selectQ);
 			$_SESSION['id'] = $selectF['id'];
-			$_SESSION['name'] = $selectF['name'];
+			$_SESSION['name'] = $selectF['username'];
 			if($selectF['webadmin'] == "1") { $_SESSION['webadmin'] = $selectF['webadmin']; }
 			echo "<META HTTP-EQUIV=Refresh CONTENT=\"0; URL=\"?page=index\">";
 		} else {

@@ -13,7 +13,7 @@ echo "<center><p class='ucpHeader'>Delete A News Article</p>";
 							<b>Article:</b><br/>
 							<select name=\"art\">
 								<option value=\"\">Select Article...</option>";
-				$gn = mysql_query("SELECT * FROM `website_news` ORDER BY `id` DESC") or die(mysql_error());
+				$gn = mysql_query("SELECT * FROM `web_news` ORDER BY `id` DESC") or die(mysql_error());
 				while($n = mysql_fetch_array($gn)){
 					echo "
 								<option value=\"".$n['id']."\">#".$n['id']." - ".$n['title']."</option>";
@@ -37,7 +37,7 @@ echo "<center><p class='ucpHeader'>Delete A News Article</p>";
 				}elseif($dec == "0"){
 					echo "The news article was not deleted.<br/>";
 				}else{
-					$d = mysql_query("DELETE FROM `website_news` WHERE `id`='".$art."'") or die(mysql_error());
+					$d = mysql_query("DELETE FROM `web_news` WHERE `id`='".$art."'") or die(mysql_error());
 					echo "The news article has been deleted.<br/>";
 				}
 				echo "<br/><a href='?page=news_manage&notice=edit_notice'>Return</a>";
