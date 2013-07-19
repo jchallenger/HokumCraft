@@ -10,7 +10,7 @@ include ("./includes/MCServerStatus.php");
 
 include ("./includes/MCQuery.php");
 
-$host 			= "localhost"; // Host [Default: localhost]
+$host 			= "192.168.2.105"; // Host [Default: localhost]
 $user 			= "minecraft"; // Database User [Default: root]
 $pass 			= "tricker9132"; // Database Password [Default: root]
 $database 		= "minecraft_hokumcraft"; // Database Name [Default: odinms]
